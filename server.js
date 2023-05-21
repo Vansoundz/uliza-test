@@ -13,17 +13,21 @@ app.post('/askChatbot', (req, res) => {
   const pythonProcess = spawn('python3', ['uliza2.py']);
   let answer = '';
 
+  console.log({question})
+
   pythonProcess.stdout.on('data', (data) => {
     answer += data.toString();
     console.log(data, 'data');
     console.log(answer, 'answer')
   });
 
-  pythonProcess.stderr.on('data', (error) => {
+  pythonProcess.stderr.on('error', (error) => {
+    console.log({error})
     res.status(500).json({ error: error.toString() });
   });
 
   pythonProcess.on('close', () => {
+    console.log({answer})
     res.json({ answer: answer.trim() });
   });
 
