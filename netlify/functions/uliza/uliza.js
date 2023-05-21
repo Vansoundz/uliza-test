@@ -17,7 +17,7 @@ const handler = async (event, context) => {
   router.post('/uliza', (req, res) => {
     const question = req.body.userInput;
 
-    const pythonProcess = spawn("python3", ["uliza2.py"]);
+    const pythonProcess = spawn("python", ["uliza2.py"]);
     let answer = "";
 
     pythonProcess.stdout.on("data", (data) => {
