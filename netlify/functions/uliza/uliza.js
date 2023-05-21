@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { spawn } = require('child_process');
+const serverless = require("serverless-http")
 
 const app = express();
 const port = 3000;
@@ -39,7 +40,7 @@ app.post('/askChatbot', (req, res) => {
 // app.listen(port, () => {
 //   console.log(`Server running on http://localhost:${port}`);
 // });
-const handler = async (event) => {
+const handler = async (event, context) => {
   return serverless(app)(event, context);
 }
 

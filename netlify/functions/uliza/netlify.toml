@@ -1,5 +1,5 @@
 [functions]
-  external_node_modules = ["express"]
+  external_node_modules = ["express", "serverless-http", "spacy-js", "sqlite3", "python-shell", "http-server"]
   node_bundler = "esbuild"
 [[redirects]]
   force = true
