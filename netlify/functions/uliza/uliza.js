@@ -3,6 +3,10 @@ const cors = require("cors");
 const { spawn } = require("child_process");
 const serverless = require("serverless-http");
 
+// const python = require('./myenv/bin/python3')
+
+// console.log(`${python}`)
+
 const handler = async (event, context) => {
   const app = express();
   app.use(express.json());
@@ -13,7 +17,7 @@ const handler = async (event, context) => {
   router.post('/uliza', (req, res) => {
     const question = req.body.userInput;
 
-    const pythonProcess = spawn("python3", ["uliza2.py"]);
+    const pythonProcess = spawn("python", ["uliza2.py"]);
     let answer = "";
 
     pythonProcess.stdout.on("data", (data) => {
