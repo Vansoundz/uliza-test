@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../Users/vans/Documents/code/test/reviews/netlify/functions/api.js"],
+  "sourceRoot": "/var/folders/g_/wwkm4w617t3gm0ql25y2rcxr0000gn/T/tmp-18571-x1gJCihRaiI3",
+  "sourcesContent": ["const express = require(\"express\")\n\nfunction handler(event, context) {\n  const api = express();\n  const router = express.Router();\n  router.get('/hello', (req, res) => res.send('Hello World!'));\n  api.use('/api/', router);\n  return serverless(api)(event, context);\n}\n\nmodule.exports = { handler };"],
+  "mappings": ";AAAA,IAAM,UAAU,QAAQ;AAExB,iBAAiB,OAAO,SAAS;AAC/B,QAAM,MAAM,QAAQ;AACpB,QAAM,SAAS,QAAQ,OAAO;AAC9B,SAAO,IAAI,UAAU,CAAC,KAAK,QAAQ,IAAI,KAAK,cAAc,CAAC;AAC3D,MAAI,IAAI,SAAS,MAAM;AACvB,SAAO,WAAW,GAAG,EAAE,OAAO,OAAO;AACvC;AAEA,OAAO,UAAU,EAAE,QAAQ;",
+  "names": []
+}

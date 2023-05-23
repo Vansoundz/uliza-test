@@ -246,7 +246,7 @@
           botText.classList.add("bubble");
           botText.classList.add("bot-text");
 
-          fetch('https://uliza-db.netlify.app/.netlify/functions/uliza', {
+          fetch('http://localhost:5001/askChatbot', {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
